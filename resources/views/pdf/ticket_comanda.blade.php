@@ -28,7 +28,7 @@
 		<thead>
 			<tr>
 				<th style="text-align: left; width: 10%;">Cant</th>
-				<th style="text-align: center; width: 40%;">Material</th>
+				<th style="text-align: center; width: 40%;">Producto</th>
 				<th style="text-align: left; width: 20%;">C. Unit</th>
 				<th style="text-align: left; width: 30%;">Total</th>
 			</tr>

@@ -98,10 +98,10 @@
             <td style="text-align: right;"><b>Descuento:</b></td>
             <td style="text-align: right;">${{ number_format($factura->descuento, 0, '.', '.') }}</td>
         </tr>
-        <tr>
+        {{-- <tr>
             <td style="text-align: right;"><b>Peso total:</b></td>
             <td style="text-align: right;">{{ $factura->peso }} Kg</td>
-        </tr>
+        </tr> --}}
         <tr>
             <td style="text-align: right;"><b>Total:</b></td>
             <td style="text-align: right; font-weight: bold;">${{ number_format($factura->valor, 0, '.', '.') }}</td>

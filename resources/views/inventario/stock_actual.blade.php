@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="exportar_excel()">
-                <span class="fab-label">Exportar a excel</span>
+                <span class="fab-label"><b>Exportar a excel</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-agenda"></i>
                 </div>
@@ -63,7 +63,7 @@
                                                             <option value="AGOTADO">Agotado</option>
                                                             <option value="POR_AGOTARSE">Por_agotarse</option>
                                                             <option value="ESTABLE">Estable</option>
-                                                            <option value="FULL">FULL</option>
+                                                            <option value="FULL">Full</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-sm-6"></div>
@@ -87,7 +87,7 @@
                                                                         <center><i class="fa fa-laptop"></i></center>
                                                                     </th>
                                                                     <th>
-                                                                        <center><b>Material</b></center>
+                                                                        <center><b>Producto</b></center>
                                                                     </th>
                                                                     <th>
                                                                         <center><b>Precio Compra</b></center>
@@ -145,11 +145,11 @@
                                                                                         <span
                                                                                             class="badge badge-danger"><b>Agotado</b></span>
                                                                                     @else
-                                                                                        @if ($producto->cantidad_actual >= $producto->cantidad_minimo_alerta)
+                                                                                        @if ($producto->cantidad_actual >= ($producto->cantidad_minimo_alerta*2))
                                                                                             <span
                                                                                                 class="badge badge-success"><b>Full</b></span>
                                                                                         @else
-                                                                                            @if ($producto->cantidad_actual >= 500 && $producto->cantidad_actual <= $producto->cantidad_minimo_alerta)
+                                                                                            @if ($producto->cantidad_actual > $producto->cantidad_minimo_alerta && $producto->cantidad_actual <= ($producto->cantidad_minimo_alerta*2))
                                                                                                 <span
                                                                                                     class="badge badge-info text-black"><b>Estable</b></span>
                                                                                             @else
@@ -207,7 +207,7 @@
 
         <tr>
             <th>
-                <center><b>Material</b></center>
+                <center><b>Producto</b></center>
             </th>
             <th>
                 <center><b>Precio Compra</b></center>
@@ -272,7 +272,7 @@
 
     <script type="text/javascript">
         function exportar_excel() {
-            tableToExcel('tabla_excel', 'Reporte de Stock inventario ARSI')
+            tableToExcel('tabla_excel', 'Reporte de Stock inventario Productos químicos mi fragancia')
         }
         @foreach ($tipos as $item)
             setFiltro('filtro-productos-{{ $item->id_dominio }}', 'table-productos-{{ $item->id_dominio }}')

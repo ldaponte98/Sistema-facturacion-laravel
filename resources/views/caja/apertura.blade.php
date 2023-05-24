@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-lg-12"> 
                             <div class="alert alert-warning">
-                                <strong>Usted no tiene permisos para abrir una caja de factuiración</strong>
+                                <strong>Usted no tiene permisos para abrir una caja de facturación</strong>
                             </div>
                         </div>
                     </div>    

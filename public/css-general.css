@@ -125,7 +125,7 @@
 .fab{
     width: 60px;
     height: 60px;
-    background: #d23f31;
+    background: #03a803d4;
 }
 
 .fab-options{
@@ -161,15 +161,15 @@
     white-space: nowrap;
     border-radius: 3px;
     font-size: 16px;
-    background: #666666;
-    color: #ffffff;
+    background:  #6ede6da1;
+    color: #000000;
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     margin-right: 10px;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #23558a;
+    background-color: #35b12e;
 }
 .user-menu{
     width: max-content !important;

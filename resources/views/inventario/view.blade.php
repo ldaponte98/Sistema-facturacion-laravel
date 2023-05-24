@@ -6,13 +6,13 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/inventario/movimientos'">
-                <span class="fab-label">Ver movimientos de inventario</span>
+                <span class="fab-label"><b>Ver movimientos de inventario</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-list"></i>
                 </div>
             </li>
             <li onclick="location.href = '{{ config('global.url_base') }}/inventario/crear'">
-                <span class="fab-label">Nuevo movimiento de inventario</span>
+                <span class="fab-label"><b>Nuevo movimiento de inventario</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-plus"></i>
                 </div>
@@ -92,7 +92,7 @@
                                 <thead>
                                     <tr>
                                         <th class="serial"><center><i class="fa fa-laptop"></i></center></th>
-                                        <th><center><b>Material</b></center></th>
+                                        <th><center><b>Producto</b></center></th>
                                         <th><center><b>Presentación</b></center></th>
                                         <th><center><b>Cantidad</b></center></th>
                                         <th><center><b>Precio</b></center></th>

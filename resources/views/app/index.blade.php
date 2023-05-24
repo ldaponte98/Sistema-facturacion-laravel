@@ -237,7 +237,7 @@
         detalles += `</table>`
         $("#btn-confirmar").fadeIn()
       }else{
-        detalles += `<i>No tienes materiales seleccionados</i>`
+        detalles += `<i>No tienes productos seleccionados</i>`
         $("#btn-confirmar").fadeOut()
       }
       $("#total-detail-car").html(`$${format(total)}`)

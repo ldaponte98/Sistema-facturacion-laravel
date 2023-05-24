@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/usuario/crear'">
-                <span class="fab-label">Nuevo usuario</span>
+                <span class="fab-label"><b>Nuevo usuario</b></span>
                 <div class="fab-icon-holder">
                     <i class="fa fa-user"></i>
                 </div>

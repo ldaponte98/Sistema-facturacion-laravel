@@ -8,20 +8,20 @@
             <i class="fa fa-bars"></i>
         </div>
         <ul class="fab-options">
-            <li onclick="Guardar(0)" id="permiso-guardar">
-                <span class="fab-label">Guardar</span>
+            {{-- <li onclick="Guardar(0)" id="permiso-guardar">
+                <span class="fab-label"><b>Guardar</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-save"></i>
                 </div>
-            </li>
+            </li> --}}
             <li onclick="Guardar(1)" id="permiso-guardar-finalizar">
-                <span class="fab-label">Guardar y finalizar</span>
+                <span class="fab-label"><b>Guardar y finalizar</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-shopping-cart"></i>
                 </div>
             </li>
             <li onclick="Imprimir('factura')" id="permiso-imprimir-factura">
-                <span class="fab-label">Imprimir factura</span>
+                <span class="fab-label"><b>Imprimir factura</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-printer"></i>
                 </div>
@@ -33,7 +33,7 @@
                 </div>
             </li> --}}
             <li onclick="$('#modal-anulacion').modal('show')" id="permiso-anular">
-                <span class="fab-label">Cancelar o anular</span>
+                <span class="fab-label"><b>Cancelar o anular</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-close"></i>
                 </div>
@@ -94,7 +94,7 @@
 <div class="row">
     <div class="col-sm-8">
         <div class="d-flex">
-            <input type="text" placeholder="Consulta materiales aqui..." onkeyup="BuscarProductos(this.value)" class="form-control search mb-2" id="filtro-productos">
+            <input type="text" placeholder="Consulta productos aqui..." onkeyup="BuscarProductos(this.value)" class="form-control search mb-2" id="filtro-productos">
             <button class="btn btn-secundary btn-erase" onclick="$('#filtro-productos').val(''); BuscarProductos('')"><i class="fa fa-times"></i></button>
         </div>
         
@@ -103,7 +103,7 @@
         </div>
         <div class="card card-products">
         	<div class="card-header">
-                <i class="fa fa-recycle"></i><strong class="card-title pl-2">Materiales</strong>
+                <i class="fa fa-recycle"></i><strong class="card-title pl-2">Productos</strong>
             </div>
             <div class="card-body">
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -147,7 +147,7 @@
                              <div class="col-sm-12">
                                  <center>
                                     <img width="350" height="350" src="{{ asset('plantilla/images/empty_product.svg') }}">
-                                    <h3>No hay materiales en esta categoria</h3>
+                                    <h3>No hay productos en esta categoria</h3>
                                  </center>
                              </div> 
                 			 @endif
@@ -206,13 +206,13 @@
                     <div class="location text-sm-center"><i class="fa fa-map-marker"></i> {{ $licencia->ciudad }}</div>
                 </div>
                 <hr>
-                <strong class="card-title">Materiales adquiridos</strong>
+                <strong class="card-title">Productos adquiridos</strong>
                 <br>
                 <div class="table-stats order-table ov-h mt-2">
                     <table class="table" id="table-detalles">
                         <thead>
                             <tr>
-                                <th><center><b>Material</b></center></th>
+                                <th><center><b>Producto</b></center></th>
                                 <th><center><b>Peso</b></center></th>
                                 <th><center><b>V.unidad</b></center></th>
                                 <th><center><b>Total</b></center></th>
@@ -221,7 +221,7 @@
                         </thead>
                         <tbody>
                         	<tr>
-                        		<td colspan="4"><center><i>No hay materiales seleccionados</i></center></td>
+                        		<td colspan="4"><center><i>No hay productos seleccionados</i></center></td>
                         	</tr>
                         </tbody>
                     </table>
@@ -241,10 +241,10 @@
                 	<label class="lb-flex">Subtotal</label>
                 	<input type="text" id="factura-subtotal" disabled placeholder="0" class="form-control">
                 </div>
-                <div class="form-group d-flex">
+                {{-- <div class="form-group d-flex">
                 	<label class="lb-flex"><b>Peso total (Kg)</b></label>
                 	<input type="text" id="factura-peso" disabled placeholder="0" class="form-control">
-                </div>
+                </div> --}}
                 {{-- <div class="form-group d-flex hide" id="div-domicilio">
                     <label class="lb-flex"><span class="green"><b>+</b></span> Domicilio ($)</label>
                     <input onkeyup="ValidarDescuentoServicio()" type="number" id="factura-domicilio" placeholder="0" class="form-control">
@@ -267,10 +267,10 @@
                 	<label>Observaciones</label>
                 	<textarea id="factura-observaciones" class="form-control" rows="3"></textarea>
                 </div>
-                <div class="form-group d-flex">
+                {{-- <div class="form-group d-flex">
                     <label class="lb-flex"><b>Duración estimada (minutos)</b></label>
                     <input type="number" id="factura-duracion" style="width: 30%;" placeholder="0" class="form-control">
-                </div>
+                </div> --}}
                 <hr>
                 <div class="card-text text-sm-center">
                     <a href="#"><i class="fa fa-facebook pr-1"></i></a>
@@ -427,7 +427,7 @@
     }
 
     function EliminarProducto(id_producto) {
-        let resp = confirm("¿Seguro que desea eliminar este material de la compra?")
+        let resp = confirm("¿Seguro que desea eliminar este producto de la compra?")
         if (resp) {
             let pos = 0;
             this.factura.detalles.forEach((item) => {
@@ -488,7 +488,7 @@
         let peso_total = 0
         if (this.factura.detalles.length == 0) {
             tabla = `<tr>
-                        <td colspan="4"><center><i>No hay materiales seleccionados</i></center></td>
+                        <td colspan="4"><center><i>No hay productos seleccionados</i></center></td>
                     </tr>`
         }else{
             this.factura.detalles.forEach((item) => {
@@ -744,7 +744,7 @@
 
     function ValidarCampos() {
         if (this.factura.detalles.length == 0) {
-            toastr.error("Es necesario escoger por lo menos un material para el pedido", "Error")
+            toastr.error("Es necesario escoger por lo menos un producto para el pedido", "Error")
             return false;
         }
 

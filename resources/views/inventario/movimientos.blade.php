@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/inventario/crear'">
-                <span class="fab-label">Nuevo movimiento de inventario</span>
+                <span class="fab-label"><b>Nuevo movimiento de inventario</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-plus"></i>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
             </li> --}}
             <li onclick="exportar_excel()">
-                <span class="fab-label">Exportar a excel</span>
+                <span class="fab-label"><b>Exportar a excel</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-agenda"></i>
                 </div>
@@ -149,7 +149,7 @@
 
 <script type="text/javascript">
     function exportar_excel() {
-        tableToExcel('tabla_excel', 'Reporte de movimientos ARSI')
+        tableToExcel('tabla_excel', 'Reporte de movimientos Productos químicos mi fragancia')
     }
     $(document).ready(function() {
         $('#fechas').daterangepicker({

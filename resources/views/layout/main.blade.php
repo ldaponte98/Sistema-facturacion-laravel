@@ -9,12 +9,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ARSI - Recuperadores</title>
-    <meta name="description" content="ARSI - Recuperadores">
+    <title>Productos Químicos mi Fragancia</title>
+    <meta name="description" content="Productos químicos mi fragancia">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="{{ asset('plantilla/images/app/zorax_small.png') }}">
-    <link rel="shortcut icon" href="{{ asset('plantilla/images/app/zorax_small.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('plantilla/images/app/counter.png') }}">
+    <link rel="shortcut icon" href="{{ asset('plantilla/images/app/counter.png') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
@@ -95,7 +95,7 @@
             <div class="top-left">
                 <div class="navbar-header">
                     
-                    <a class="navbar-brand" style="text-align: center; margin-right: 0px;" href=""><img height="43" width="100" src="{{ $licencia->get_imagen() }}" alt="{{ $licencia->nombre }}"></a>
+                    <a class="navbar-brand" style="text-align: center; margin-right: 0px;" href="/canales_servicio"><img height="43" width="100" src="{{ $licencia->get_imagen() }}" alt="{{ $licencia->nombre }}"></a>
                     {{-- <a class="navbar-brand hidden" href="" ><img src="{{ $licencia->get_imagen_small() }}" alt="{{ $licencia->nombre }}"></a> --}}
                     <a id="menuToggle" class="menutoggle" style="width: 0px;"><i class="fa fa-bars"></i></a>
                     
@@ -126,7 +126,7 @@
                                     <i class="fa fa-bell"></i>
                                     @if (count($productos) > 0)
                                         @foreach ($productos as $product)
-                                            @if ($product->cantidad_minimo_alerta <= $product->cantidad_actual)
+                                            @if ($product->cantidad_minimo_alerta >= $product->cantidad_actual)
                                                 @php 
                                                     $notifications ++;
                                                 @endphp
@@ -138,13 +138,13 @@
                                 <div class="dropdown-menu" aria-labelledby="notification">
                                     @if (count($productos) > 0)
                                         @foreach ($productos as $producto)
-                                            @if ($producto->cantidad_minimo_alerta <= $producto->cantidad_actual)
+                                            @if ($producto->cantidad_minimo_alerta >= $producto->cantidad_actual)
                                                 <a class="dropdown-item media" href="{{ route('inventario/stock_actual') }}">
                                                     <i class="green fa fa-warning"></i>
-                                                    <p>El material <b>{{ $producto->nombre }}</b> ha alcanzado los <b>{{ $producto->cantidad_actual }} {{ $producto->presentacion->nombre }}</b> disponibles</p>
+                                                    <p>Producto <b>{{ $producto->nombre }}</b> a punto de agotarse, solo hay <b>{{ $producto->cantidad_actual }} {{ $producto->presentacion->nombre }}</b> disponibles</p>
                                                 </a>
                                             @else
-                                                @if($notifications < 1 && empty($info))  
+                                                @if($notifications > 1 && empty($info))  
                                                     @php 
                                                         $info = "Si hay notificaciones";
                                                     @endphp
@@ -213,10 +213,10 @@
             <div class="footer-inner bg-white">
                 <div class="row">
                     <div class="col-sm-6">
-                        ARSI - Recuperadores 
+                        Productos químicos mi fragancia
                     </div>
                     <div class="col-sm-6 text-right">
-                        Designed by <a href="https://www.linkedin.com/in/ever-navit-lazo-castillo-109428207" target="_blank">Ever Navit Lazo Castillo</a>
+                        Designed by <a href="https://www.unicesar.edu.co/index.php/es/" target="_blank">Universidad Popular del Cesar</a>
                     </div>
                 </div>
             </div>

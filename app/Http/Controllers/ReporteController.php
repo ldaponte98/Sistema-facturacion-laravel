@@ -37,14 +37,14 @@ class ReporteController extends Controller
             }
         }
 
-        // $facturas = Factura::where('id_licencia', session('id_licencia'))
-        //     ->whereBetween('fecha', [$fecha_desde, $fecha_hasta])
-        //     ->where('id_factura_cruce', null);
+        $facturas = Factura::where('id_licencia', session('id_licencia'))
+            ->whereBetween('fecha', [$fecha_desde, $fecha_hasta])
+            ->where('id_factura_cruce', null);
 
-        $facturas = Factura::join('inventario', 'factura.id_factura', '=', 'inventario.id_factura')
-        ->where('factura.id_licencia', session('id_licencia'))
-        ->whereBetween('inventario.fecha', [$fecha_desde, $fecha_hasta])
-        ->where('factura.id_factura_cruce', null);
+        // $facturas = Factura::join('inventario', 'factura.id_factura', '=', 'inventario.id_factura')
+        // ->where('factura.id_licencia', session('id_licencia'))
+        // ->whereBetween('inventario.fecha', [$fecha_desde, $fecha_hasta])
+        // ->where('factura.id_factura_cruce', null);
 
         if (count($canales) > 0) {
             $facturas = $facturas->whereIn('factura.id_dominio_canal', $canales);

@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/categoria/crear'">
-                <span class="fab-label">Nueva categoria</span>
+                <span class="fab-label"><b>Nueva categoria</b></span>
                 <div class="fab-icon-holder">
                     <i class="fa fa-laptop"></i>
                 </div>

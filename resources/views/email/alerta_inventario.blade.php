@@ -19,6 +19,6 @@
 </head>
 <body>
 	<h1><b>Alerta inventario</b></h1>
-	<p>El software <b>ARSI</b> informa que el material <b>{{ strtoupper($producto->nombre) }}</b>, superó los (<b>{{ $producto->cantidad_actual }}</b>) Kilogramos KG almacenados en bodega</p>
+	<p><b>Productos químicos mi fragancia</b> informa que el producto <b>{{ strtoupper($producto->nombre) }}</b>, superó los (<b>{{ $producto->cantidad_actual }}</b>) Kilogramos KG almacenados en bodega</p>
 </body>
 </html>

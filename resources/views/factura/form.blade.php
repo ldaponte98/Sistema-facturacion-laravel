@@ -46,8 +46,8 @@
                                 <div class="row">
                                   <div class="col-sm-12">
                                     <center>
-                                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1" onclick="deshabilitar_producto_nuevo()">Agregar material registrado</button>&nbsp;&nbsp;
-                                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1" onclick="habilitar_producto_nuevo()">Agregar material no registrado</button>
+                                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1" onclick="deshabilitar_producto_nuevo()">Agregar producto registrado</button>&nbsp;&nbsp;
+                                      <button class="btn btn-primary" data-toggle="modal" data-target="#modal1" onclick="habilitar_producto_nuevo()">Agregar producto no registrado</button>
                                     </center>
                                   </div>
                                   <div class="col-sm-12">
@@ -56,7 +56,7 @@
                                             <thead>
                                                 <tr>
                                                     <th><center>#</center></th>
-                                                    <th><center>Material</center></th>
+                                                    <th><center>Producto</center></th>
                                                     <th><center>Descripción</center></th>
                                                     <th><center>Valor</center></th>
                                                     <th><center>Iva</center></th>
@@ -132,7 +132,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content ">
       <div class="modal-header">
-            <h5 class="modal-title" id="smallmodalLabel">Agregar material</h5>
+            <h5 class="modal-title" id="smallmodalLabel">Agregar producto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -144,8 +144,8 @@
               <div class="form-group">
                 <div id="select_producto">
 
-                   <select data-placeholder="Selecciona un material" class="form-control select2" id="id_producto" onchange="buscar_producto(this.value)">
-                    <option value="0" disabled selected>Material</option>
+                   <select data-placeholder="Selecciona un producto" class="form-control select2" id="id_producto" onchange="buscar_producto(this.value)">
+                    <option value="0" disabled selected>Producto</option>
                     @php
                         $productos = \App\Producto::all()->where('id_licencia', session('id_licencia'));
                     @endphp
@@ -155,7 +155,7 @@
                     </select>
                     </div>
                   </div>
-                  <input style="margin-bottom: 10px" id="nombre_producto" placeholder="material" type="text" class="form-control" style="display: none;">
+                  <input style="margin-bottom: 10px" id="nombre_producto" placeholder="producto" type="text" class="form-control" style="display: none;">
 
             </div>
             <div class="col-sm-12">
@@ -438,7 +438,7 @@
       var id_tercero = {{ $tercero->id_tercero }};
       var tipo_factura = {{ $tipo }};
       if(this.carrito.length <= 0){
-        alert("Debe agregar materiales para realizar la factura")
+        alert("Debe agregar productos para realizar la factura")
         return false
       }
 

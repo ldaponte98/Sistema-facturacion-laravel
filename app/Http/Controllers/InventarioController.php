@@ -12,6 +12,7 @@ use App\Licencia;
 use App\Permiso;
 use App\Producto;
 use App\ResolucionFactura;
+use Hamcrest\Core\IsNull;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -281,10 +282,15 @@ class InventarioController extends Controller
             }else{
                 $factura->numero = $resolucion->prefijo_factura . "-" . ($resolucion->consecutivo_factura + 1);
             }
-
-            if ($caja) {
+            
+            if ($caja || session('id_perfil') == '5') {
                 $factura->id_tercero              = $id_tercero;
-                $factura->id_caja                 = $caja->id_caja;
+                if (is_null($caja)) {
+                    $factura->id_caja                 = null;
+                }else{
+                    $factura->id_caja                 = $caja->id_caja;
+                }
+
                 $factura->peso                    = $peso;
                 $factura->valor                   = $valor;
                 

@@ -125,7 +125,7 @@ class Producto extends Model
 
     public function notificar_alerta_inventario()
     {
-        $subject = "ARSI - Aviso de inventario";
+        $subject = "Productos químicos mi fragancia Aviso de inventario";
 
         $emails = explode(",", $this->licencia->emails_reportes);
 
@@ -136,7 +136,7 @@ class Producto extends Model
             );
             try {
                 Mail::send('email.alerta_inventario', $data, function ($msj) use ($subject, $for) {
-                    $msj->from(config('global.email_zorax'), "ARSI - Sistema de inventario");
+                    $msj->from(config('global.email_zorax'), "Productos químicos mi fragancia Sistema de inventario");
                     $msj->subject($subject);
                     $msj->to($for);
                 });

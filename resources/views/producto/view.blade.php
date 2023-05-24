@@ -6,13 +6,13 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href='/producto/editar/{{ $producto->id_producto }}'">
-                <span class="fab-label">Modificar</span>
+                <span class="fab-label"><b>Modificar</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-pencil"></i>
                 </div>
             </li>
             <li onclick="location.href = '/producto/crear'">
-                <span class="fab-label"><b>Nuevo</b> material</span>
+                <span class="fab-label"><b>Nuevo producto</b></span>
                 <div class="fab-icon-holder">
                     <i class="fa fa-laptop"></i>
                 </div>
@@ -62,7 +62,7 @@
 	        <div class="row">
 	        	<div class="col-sm-6">
 	        		<center>
-	        			<h5><b>Contenido por material </b></h5><p>{{ number_format($producto->contenido,0,'\'','.') }} {{ $producto->presentacion->descripcion }}</p>
+	        			<h5><b>Contenido por producto </b></h5><p>{{ number_format($producto->contenido,0,'\'','.') }} {{ $producto->presentacion->descripcion }}</p>
 	        		</center>
 	        	</div>
 	        	<div class="col-sm-6">

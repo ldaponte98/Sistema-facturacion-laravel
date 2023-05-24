@@ -130,7 +130,7 @@
             @if ($factura->licencia->imagen != null and $factura->licencia->imagen != '')
                 <td colspan="3" rowspan="4"
                     style="width:30px;border-right: none; border-bottom: none; border-top: none; text-align: center;">
-                    <img height="90" width="90" src="{{ $factura->licencia->get_imagen_email() }}"></td>
+                    <img height="90" width="90" src="{{ $factura->licencia->get_imagen() }}"></td>
             @else
                 <td colspan="3" rowspan="4" style="border-right: none; border-bottom: none; border-top: none;">
                     <center><img src="plantilla/images/app/sinimagen.jpg"></center>
@@ -144,15 +144,15 @@
             </td>
         </tr>
         <tr>
-            <td colspan="5" style="border-left: none; border-bottom: none; font-size: 16px; border-top: none;">
-                <center><b>ARSI RECUPERADORES E.S.P</b></center>
+            <td colspan="5" style="border-left: none; border-bottom: none; font-size: 12px; border-top: none;">
+                <center><b>PRODUCTOS QUIMICOS MI FRAGANCIA</b></center>
             </td>
             <td colspan="3">
                 <center>{{ $factura->numero }}</center>
             </td>
         </tr>
         <tr>
-            <td colspan="5" style="border-left: none; border-top: none; border-bottom: none; font-size: 16px;">
+            <td colspan="5" style="border-left: none; border-top: none; border-bottom: none; font-size: 14px;">
                 <center>NIT. {{ $factura->licencia->nit }}</center>
             </td>
             <td colspan="3" style="background-color: #7bf6087c;">
@@ -160,8 +160,8 @@
             </td>
         </tr>
         <tr>
-            <td colspan="5" style="border-left: none; border-top: none; border-bottom: none; font-size: 16px;">
-                <center>{{ $factura->licencia->ciudad }}</center>
+            <td colspan="5" style="border-left: none; border-top: none; border-bottom: none; font-size: 14px;">
+                <center>{{ $factura->licencia->direccion }}</center>
             </td>
             <td>
                 <center>

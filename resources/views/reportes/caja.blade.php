@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="exportar_excel()">
-                <span class="fab-label">Exportar a excel</span>
+                <span class="fab-label"><b>Exportar a excel</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-agenda"></i>
                 </div>
@@ -252,7 +252,7 @@
 
 <script>
 	function exportar_excel() {
-        tableToExcel('tabla_excel', 'Reporte de caja ARSI')
+        tableToExcel('tabla_excel', 'Reporte de caja Productos químicos mi fragancia')
     }
     $(document).ready(function() {
         $('#fechas').daterangepicker({

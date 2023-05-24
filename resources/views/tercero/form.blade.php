@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                 <div><center>
-                                    <button class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
+                                    <button class="btn btn-primary" style="background-color: #35b12e; border-color: #35b12e"><i class="fa fa-save"></i> Guardar</button>
                                     @if(count($errors) > 0)
                                         <div class="alert alert-danger">
                                             @foreach($errors as $error)

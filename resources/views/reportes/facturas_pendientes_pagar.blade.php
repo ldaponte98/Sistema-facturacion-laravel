@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="exportar_excel()">
-                <span class="fab-label">Exportar a excel</span>
+                <span class="fab-label"><b>Exportar a excel</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-agenda"></i>
                 </div>
@@ -226,7 +226,7 @@
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Fecha</b></td>
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Tipo</b></td>
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Canal</b></td>
-        <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Cantidad de materiales</b></td>
+        <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Cantidad de productos</b></td>
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Usu registro</b></td>
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Estado</b></td>
         <td style="background-color: #094d96; color: #ffffff; width: 200px;"><b>Valor</b></td>
@@ -299,7 +299,7 @@
 <script type="text/javascript">
     var id_factura = null;
     function exportar_excel() {
-        tableToExcel('tabla_excel', 'Informe Facturas a credito ARSI')
+        tableToExcel('tabla_excel', 'Informe Facturas a credito Productos químicos mi fragancia')
     }
     $(document).ready(function() {
         $('#fechas').daterangepicker({

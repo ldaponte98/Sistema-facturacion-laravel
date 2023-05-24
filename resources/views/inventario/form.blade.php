@@ -64,7 +64,7 @@
                                                 $itemsC = \App\Tercero::all()->where('id_dominio_tipo_tercero', 3)
                                                                             ->where('id_licencia', session('id_licencia'));                           
                                             @endphp
-                                            <label for="cc-payment" class="control-label mb-1"><b>Reciclador</b></label>
+                                            <label for="cc-payment" class="control-label mb-1"><b>Proveedor</b></label>
                                             <select name="id_tercero_proveedor" id="id_tercero_proveedor" data-placeholder="Consulta aqui por nombre o identificacion..." class="form-control select2">
                                                 <option value="" label="default"></option>
                                                 @foreach($items as $item)
@@ -105,13 +105,13 @@
 
                         <div class="row">
                             <div class="col-sm-12">
-                                <div class="alert alert-info"><b>Materiales</b></div>
+                                <div class="alert alert-info"><b>Productos</b></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="cc-payment" class="control-label mb-1"><b>material</b></label>
+                                    <label for="cc-payment" class="control-label mb-1"><b>producto</b></label>
                                     <select id="select-producto" onchange="validar_presentacion(this.value)" data-placeholder="Consulta aqui por nombre..." class="form-control select2">
                                         <option value="" label="default"></option>
                                         
@@ -152,7 +152,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="serial"><center><i class="fa fa-laptop"></i></center></th>
-                                                <th><center><b>Material</b></center></th>
+                                                <th><center><b>Producto</b></center></th>
                                                 <th><center><b>Presentación</b></center></th>
                                                 <th><center><b>Existencia</b></center></th>
                                                 <th><center><b>Cantidad</b></center></th>
@@ -163,7 +163,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="8"><center><i>No hay materiales registrados</i></center></td>
+                                                <td colspan="8"><center><i>No hay productos registrados</i></center></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -257,11 +257,11 @@
 
         if (precio.trim() == "") precio = 0
         if (id_producto == "") {
-            toastr.error("Debe escoger un material valido", "Error")
+            toastr.error("Debe escoger un producto valido", "Error")
             return;
         }
         if (id_producto == "") {
-            toastr.error("Debe escoger un material valido", "Error")
+            toastr.error("Debe escoger un producto valido", "Error")
             return;
         }
         if (cantidad.trim() == "" || cantidad < 0) {
@@ -303,7 +303,7 @@
     }
 
     function eliminar_detalle(id_producto) {
-        resp = confirm("¿Seguro que desea eliminar este material del movimiento de inventario?")
+        resp = confirm("¿Seguro que desea eliminar este producto del movimiento de inventario?")
         if (resp) {
             let cont = 0
             this.detalles.forEach((item) => {
@@ -319,7 +319,7 @@
         let total = 0
         if (this.detalles.length <= 0) {
             tabla = `<tr>
-                        <td colspan="8"><center><i>No hay materiales registrados</i></center></td>
+                        <td colspan="8"><center><i>No hay productos registrados</i></center></td>
                     </tr>`
         }else{
             this.detalles.forEach((item) => {
@@ -356,7 +356,7 @@
                 $('#form-inventario').submit()
             } 
         }else{
-            toastr.error("Debe agregar por lo menos un material al movimiento de inventario", "Error")
+            toastr.error("Debe agregar por lo menos un producto al movimiento de inventario", "Error")
         }        
     }
     

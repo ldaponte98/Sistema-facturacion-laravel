@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/mesa/crear'">
-                <span class="fab-label">Nueva mesa</span>
+                <span class="fab-label"><b>Nueva mesa</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-plus"></i>
                 </div>

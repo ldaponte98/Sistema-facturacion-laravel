@@ -417,9 +417,11 @@ class FacturaController extends Controller
                         foreach ($post->factura->detalles as $producto) {
                             $producto                       = (object) $producto;
                             $detalle                        = new FacturaDetalle;
+                            $p                              = Producto::find($producto->id_producto);
                             $detalle->id_factura            = $factura->id_factura;
                             $detalle->id_producto           = $producto->id_producto;
                             $detalle->cantidad              = $producto->cantidad;
+                            $detalle->iva_producto          = $p->iva;
                             $detalle->nombre_producto       = $producto->nombre;
                             $detalle->precio_producto       = $producto->precio_venta;
                             $detalle->presentacion_producto = $producto->presentacion;

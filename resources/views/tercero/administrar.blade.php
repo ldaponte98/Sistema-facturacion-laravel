@@ -6,7 +6,7 @@
         </div>
         <ul class="fab-options">
             <li onclick="location.href = '{{ config('global.url_base') }}/tercero/crear'">
-                <span class="fab-label">Nuevo tercero</span>
+                <span class="fab-label"><b>Nuevo tercero</b></span>
                 <div class="fab-icon-holder">
                     <i class="ti-user"></i>
                 </div>

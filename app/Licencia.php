@@ -27,7 +27,7 @@ class Licencia extends Model
         if ($this->imagen != null and $this->imagen != '') {
             return asset('imagenes/licencia/' . $this->imagen);
         } else {
-            return asset('plantilla/images/app/zorax.png');
+            return asset('plantilla/images/app/counter.png');
         }
     }
 
@@ -47,7 +47,7 @@ class Licencia extends Model
         if ($this->imagen_small != null and $this->imagen_small != '') {
             return asset('imagenes/licencia/' . $this->imagen_small);
         } else {
-            return asset('plantilla/images/app/zorax_small.png');
+            return asset('plantilla/images/app/counter.png');
         }
     }
 
